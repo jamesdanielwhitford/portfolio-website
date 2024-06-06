@@ -1,16 +1,19 @@
+// src/App.js
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import ProjectPage from './components/ProjectPage';
-import { getProjectsFromFirestore } from './firebase';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { db } from './firebase';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const fetchedProjects = await getProjectsFromFirestore();
-      setProjects(fetchedProjects);
+      const querySnapshot = await getDocs(collection(db, 'projects'));
+      const projectsList = querySnapshot.docs.map(doc => doc.data());
+      setProjects(projectsList);
     };
 
     fetchProjects();
