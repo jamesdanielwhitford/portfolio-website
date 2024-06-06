@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import ProjectPage from './components/ProjectPage';
-import { getProjectsFromFirestore } from './firebase';
+import { getProjectsFromFirestore } from '../firebase';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
