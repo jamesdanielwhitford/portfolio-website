@@ -18,4 +18,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PORTFOLIO_WEBSITE_C14E0 }}
           channelId: live
           projectId: portfolio-website-c14e0
-          entryPoint: ./src
