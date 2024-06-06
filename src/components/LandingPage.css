@@ -1,44 +1,3 @@
-:root {
-  /* Light mode colors */
-  --background: #f9f9f9;
-  --text: #1c1c1c;
-  --red: #E53935;   /* Vibrant Red */
-  --blue: #1E88E5;  /* Vibrant Blue */
-  --yellow: #FFEB3B; /* Vibrant Yellow */
-  --button-border: #1c1c1c; /* Same as text color */
-  --button-background: #f9f9f9; /* Same as background color */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode colors */
-    --background: #1c1c1c;
-    --text: #f9f9f9;
-    --red: #FF3B30;
-    --blue: #0A84FF;
-    --yellow: #FFCC00;
-    --button-border: #f9f9f9; /* Same as text color */
-    --button-background: #1c1c1c; /* Same as background color */
-  }
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background);
-  color: var(--text);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -48,7 +7,7 @@ code {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  text-align: center;
+  text-align: left; /* Left-align text */
 }
 
 .content {
@@ -59,6 +18,7 @@ code {
   padding-bottom: 60px; /* Ensure space for the down button */
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
   justify-content: center;
   height: 80vh; /* Maintain aspect ratio */
 }
@@ -68,6 +28,7 @@ h1, h2, h3, p, .email-container, .filter-container {
   padding: 10px 0;
   font-size: inherit;
   font-weight: normal;
+  text-align: left; /* Left-align each text element */
 }
 
 h1 {
@@ -76,7 +37,7 @@ h1 {
 
 .email-container, .filter-container {
   display: flex;
-  justify-content: center; /* Center align within the flex container */
+  justify-content: flex-start; /* Align within the flex container */
   align-items: center;
   gap: 10px;
   margin: 30px 0; /* Consistent spacing */
@@ -133,11 +94,12 @@ h1 {
 
 /* Adjust spacing between elements */
 .scroll-to-see-works-of {
-  margin-bottom: 30px; /* More space between email and scroll text */
+  margin-bottom: 0px; /* Reduced space between scroll text and filter container */
 }
 
 .filter-container {
-  margin-bottom: 10px; /* Less space between filter and down button */
+  margin-top: 0px;
+  margin-bottom: 0px; /* Less space between filter and down button */
 }
 
 @media (min-width: 600px) {
